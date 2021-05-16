@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TodoList</string>
+    <string name="place_holder_example">Exemple</string>
+</resources>
