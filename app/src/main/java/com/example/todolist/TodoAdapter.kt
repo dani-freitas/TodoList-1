@@ -1,9 +1,8 @@
 package com.example.todolist
 
-import android.graphics.Paint.STRIKE_THRU_TEXT_FLAG
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import  android.graphics.Paint.STRIKE_THRU_TEXT_FLAG
+import android.util.Log
+import android.view.*
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_todo.view.*
@@ -11,7 +10,17 @@ import kotlinx.android.synthetic.main.item_todo.view.*
 class TodoAdapter(
         private val todos: MutableList<Todo>
 ): RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
-       class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+
+    class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnCreateContextMenuListener {
+        override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
+            menu?.add(Menu.NONE, R.id.excluir, Menu.NONE, "Excluir")
+            menu?.add(Menu.NONE, R.id.cancelar, Menu.NONE, "Cancelar")
+        }
+
+        init {
+            itemView.setOnCreateContextMenuListener(this)
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
         return TodoViewHolder(
@@ -26,6 +35,12 @@ class TodoAdapter(
     fun addTodo(todo: Todo) {
         todos.add(todo)
         notifyItemInserted(todos.size - 1)
+    }
+
+    fun deleteOne(index: Int) {
+        todos.removeAt(index);
+
+        notifyItemRemoved(index);
     }
 
     fun deleteDoneTodos() {
@@ -53,10 +68,36 @@ class TodoAdapter(
                 toggleStrikeThrough(tvTodoTitle, isChecked)
                 curTodo.isChecked = !curTodo.isChecked
             }
+
+            setOnClickListener(View.OnClickListener {
+                Log.d( "Click", "curto no " + curTodo.title)
+                cbDone.isChecked = !cbDone.isChecked
+            })
+
+            setOnLongClickListener(View.OnLongClickListener {
+                setCurrentPosition(holder.adapterPosition)
+                false
+            })
         }
+    }
+
+    override fun onViewRecycled(holder: TodoViewHolder) {
+        holder.itemView.setOnLongClickListener(null)
+
+        super.onViewRecycled(holder)
     }
 
     override fun getItemCount(): Int {
         return todos.size
+    }
+
+    private var currentPosition = 0;
+
+    fun getCurrentPosition(): Int {
+        return currentPosition
+    }
+
+    fun setCurrentPosition(position: Int) {
+        currentPosition = position
     }
 }
