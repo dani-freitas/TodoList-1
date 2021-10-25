@@ -7,4 +7,7 @@
     <color name="teal_700">#00474C</color>
     <color name="black">#00474C</color>
     <color name="white">#000</color>
+    <color name="Orange">#F58220</color>
+    <color name="LightGreen">#008e97</color>
+    <color name="MidNightGreen">#00474C</color>
 </resources>
