@@ -10,35 +10,70 @@
         android:id="@+id/rvTodoItems"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginStart="2dp"
         app:layout_constraintBottom_toTopOf="@+id/btnAddTodo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/etTodoTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="211dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="2dp"
+        android:fontFamily="@font/montserrat_regular"
         android:hint="Enter Todo Title"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnAddTodo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.998"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnAddTodo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Todo"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:text="+"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/Whithe_1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnDeleteDoneTodos" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <Button
         android:id="@+id/btnDeleteDoneTodos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete done"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:text="-"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/Whithe_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="330dp"
+        android:layout_height="535dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_fundo_activity" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
