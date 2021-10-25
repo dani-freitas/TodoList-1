@@ -1,9 +1,11 @@
 package com.example.todolist
 
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -36,7 +38,13 @@ class MainActivity : AppCompatActivity() {
 
         btnAddTodo.setOnClickListener {
             val todoTitle = etTodoTitle.text.toString()
-            if (todoTitle.isNotEmpty()) {
+            if (todoTitle.length <= 3){
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Necessário no mínimo 3 caracteres")
+                builder.setPositiveButton("OK, entendi!",{ dialogInterface: DialogInterface?, i: Int -> return@setPositiveButton})
+                builder.show()
+            }
+            if (todoTitle.length > 3) {
                 val todo = Todo(todoTitle)
                 todoAdapter.addTodo(todo)
                 etTodoTitle.text.clear()
