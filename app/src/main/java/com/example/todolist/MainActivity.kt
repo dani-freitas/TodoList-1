@@ -61,7 +61,6 @@ class MainActivity : AppCompatActivity() {
             builder.setMessage("Atenção, voce está prestes á finalizar/excluir uma tarefa diaria. Deseja continuar?")
             builder.setPositiveButton("SIM") { dialog, _ -> todoAdapter.deleteDoneTodos() }
             builder.setNegativeButton("NAO") { dialog, _ -> dialog.dismiss() }
-
             builder.show()
         }
 
