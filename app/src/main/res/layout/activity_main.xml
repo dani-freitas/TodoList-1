@@ -43,11 +43,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:layout_marginBottom="1dp"
+        android:backgroundTint="#166E73"
         android:fontFamily="@font/montserrat_alternates_bold"
         android:text="+"
-        android:textStyle="bold"
-        android:textSize="20dp"
         android:textColor="@color/Whithe_1"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -56,6 +57,7 @@
         android:id="@+id/btnDeleteDoneTodos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#166E73"
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="1dp"
         android:fontFamily="@font/montserrat_alternates_bold"
@@ -76,6 +78,7 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_marginLeft="15dp"
+            android:fontFamily="@font/montserrat_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -87,6 +90,7 @@
 
         <TextView
             android:id="@+id/mes_Atual"
+            android:fontFamily="@font/montserrat_medium"
             android:textColor="#FFFFFF"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
