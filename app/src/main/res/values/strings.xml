@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">TodoList</string>
+    <string name="app_name">Bem vindo ao ToDo List</string>
     <string name="place_holder_example">Exemple</string>
 </resources>
