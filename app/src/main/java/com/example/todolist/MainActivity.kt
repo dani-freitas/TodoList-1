@@ -8,6 +8,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.logging.LogRecord
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,13 +39,13 @@ class MainActivity : AppCompatActivity() {
 
         btnAddTodo.setOnClickListener {
             val todoTitle = etTodoTitle.text.toString()
-            if (todoTitle.length <= 3){
+            if (todoTitle.length < 3){
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("Necessário no mínimo 3 caracteres")
                 builder.setPositiveButton("OK, entendi!",{ dialogInterface: DialogInterface?, i: Int -> return@setPositiveButton})
                 builder.show()
             }
-            if (todoTitle.length > 3) {
+            if (todoTitle.length >= 3) {
                 val todo = Todo(todoTitle)
                 todoAdapter.addTodo(todo)
                 etTodoTitle.text.clear()
@@ -52,7 +53,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnDeleteDoneTodos.setOnClickListener {
-            todoAdapter.deleteDoneTodos()
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Finalizar/Excluir!")
+            builder.setMessage("Atenção, voce está prestes á finalizar/excluir uma tarefa diaria. Deseja continuar?")
+            builder.setPositiveButton("SIM") { dialog, _ -> todoAdapter.deleteDoneTodos() }
+            builder.setNegativeButton("NAO") { dialog, _ -> dialog.dismiss() }
+            builder.show()
+        }
+
+
+
         }
     }
-}
+
+
+
