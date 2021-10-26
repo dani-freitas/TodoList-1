@@ -51,7 +51,6 @@ class MainActivity : AppCompatActivity() {
                 etTodoTitle.text.clear()
             }
         }
-
         btnDeleteDoneTodos.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             builder.setTitle("Finalizar/Excluir!")

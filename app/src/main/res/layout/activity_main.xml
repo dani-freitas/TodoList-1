@@ -10,6 +10,7 @@
         android:id="@+id/rvTodoItems"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="80dp"
         android:layout_marginStart="2dp"
         app:layout_constraintBottom_toTopOf="@+id/btnAddTodo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,15 +66,39 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="330dp"
-        android:layout_height="535dp"
-        android:layout_marginTop="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        app:cardBackgroundColor="#00474C"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_fundo_activity" />
+        tools:layout_editor_absoluteX="1dp" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Sua agenda pessoal para atividades diarias"
+            android:textSize="16dp"
+            android:textColor="#FFFFFF"
+
+            />
+
+
+        <TextView
+            android:id="@+id/mes_Atual"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:textSize="21dp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Atividades Diárias" />
+
+
+    </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
