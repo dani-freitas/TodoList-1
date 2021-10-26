@@ -24,9 +24,6 @@ class MainActivity : AppCompatActivity() {
             R.id.cancelar -> {
                 Log.d("menu", "cancelado")
             }
-            R.id.info -> {
-
-            }
         }
 
         return super.onContextItemSelected(item)
