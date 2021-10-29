@@ -43,6 +43,10 @@ class TodoAdapter(
         notifyItemRemoved(index);
     }
 
+    fun clearAllToDos() {
+        todos.clear()
+        notifyDataSetChanged()
+    }
     fun deleteDoneTodos() {
         todos.removeAll { todo ->
             todo.isChecked
